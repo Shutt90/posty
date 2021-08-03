@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class); //automatically knows its coming from user/id in db
     }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }
