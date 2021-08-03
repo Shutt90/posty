@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Like;
 
 class Post extends Model
 {
@@ -12,7 +11,6 @@ class Post extends Model
 
     protected $fillable = [
         'body'
-
     ];
 
     public function user()
