@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(20); //returns all posts
+        $posts = Post::latest()->with(['user', 'likes'])->paginate(20); //returns all posts
 
         return view('posts.index', [
             'posts' => $posts
@@ -30,5 +30,12 @@ class PostController extends Controller
 
         return back();
 
+    }
+
+    public function destroy (Post $post, Request $request)
+    {
+        $post->delete();
+
+        return back();
     }
 }
